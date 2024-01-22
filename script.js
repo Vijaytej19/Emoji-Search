@@ -14,9 +14,26 @@ fetch('emoji.json')
         </div>
         
         `;
-        emojiContainer.appendChild(emojiDiv);
-        
-        
-        
+        emojiContainer.appendChild(emojiDiv);   
     });
+
+    const searchInput = document.getElementById('searchInput');
+    searchInput.addEventListener('input', () => {
+        const searchValue = searchInput.value.toLowerCase();
+        const emojiItems = document.querySelectorAll('.emoji-item');
+
+        emojiItems.forEach(item => {
+            const emojiText = item.textContent.toLowerCase();
+            if (emojiText.includes(searchValue)) {
+                item.style.display = 'block';
+            } else {
+                item.style.display = 'none';
+            }
+        });
+    });
+
+
 })
+.catch(error => console.error('Error fetching data:', error));
+
+
