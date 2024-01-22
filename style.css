@@ -1,0 +1,35 @@
+*{
+  margin: 0;
+  padding: 0;
+  
+}
+.titleContainer{
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  
+
+  
+}
+.searchbar{
+  height: 40px;
+  width: 468px;
+}
+.searchbar::placeholder{
+  font-size: 16px;
+  padding-left: 10px;
+}
+.searchbutton{
+  width: 42px;
+  height: 43px;
+}
+
+.voicebutton{
+  width: 42px;
+  height: 43px;
+
+}
+.emojiContainer{
+  height: 500px;
+}
+ 
