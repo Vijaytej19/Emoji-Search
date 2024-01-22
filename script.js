@@ -8,12 +8,14 @@ fetch('emoji.json')
         const emojiDiv = document.createElement('div');
         emojiDiv.classList.add('commonClass', 'emoji-item');
         emojiDiv.innerHTML = `
+        <div class = "sinleEmojiContainer">
             <p class="emoji"> ${emojiData.emoji}</p>
-            <p> ${emojiData.aliases}</p>
-            
-           
+            <p class="emojiDescription"> ${emojiData.aliases}</p>
+        </div>
+        
         `;
         emojiContainer.appendChild(emojiDiv);
+        
         
         
     });
