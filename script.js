@@ -16,24 +16,31 @@ fetch('emoji.json')
         `;
         emojiContainer.appendChild(emojiDiv);   
     });
+    
 
-    const searchInput = document.getElementById('searchInput');
-    searchInput.addEventListener('input', () => {
-        const searchValue = searchInput.value.toLowerCase();
-        const emojiItems = document.querySelectorAll('.emoji-item');
-
-        emojiItems.forEach(item => {
-            const emojiText = item.textContent.toLowerCase();
-            if (emojiText.includes(searchValue)) {
-                item.style.display = 'block';
-            } else {
-                item.style.display = 'none';
-            }
-        });
-    });
+  
 
 
 })
-.catch(error => console.error('Error fetching data:', error));
+.catch(error => console.log('Error fetching data:', error));
+
+function searchFunction() {
+    const searchInput = document.getElementById('searchInput');
+    const searchValue = searchInput.value.toLowerCase();
+    const emojiItems = document.querySelectorAll('.emoji-item');
+
+    emojiItems.forEach(item => {
+        const emojiDescription = item.querySelector('.emojiDescription').textContent.toLowerCase();
+        if (emojiDescription.includes(searchValue)) {
+            item.style.display = 'block';
+        } else {
+            item.style.display = 'none';
+        }
+    });
+}
+const searchButton = document.getElementById('searchButton');
+searchButton.onclick = searchFunction
+
+
 
 
