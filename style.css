@@ -45,9 +45,33 @@
 }
 .emoji{
   font-size: 30px;
- 
 }
-
+@media screen and (min-width: 0px){
+  #emojiContainer{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-left: auto;
+  } 
+}
+@media screen and (min-width: 768px){
+  #emojiContainer{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-left: auto;
+  } 
+}
+@media screen and (min-width: 1024px){
+  #emojiContainer{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+  } 
+}
+@media screen and (min-width: 1440px){
+  #emojiContainer{
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+  } 
+}
 
 
 
