@@ -80,7 +80,8 @@
   position: fixed;
   bottom: 10px;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateY(-30px);
+  transition: 5s;
   background-color: #333;
   color: #fff;
   padding: 10px;
