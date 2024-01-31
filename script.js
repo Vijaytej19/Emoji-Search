@@ -112,8 +112,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-const searchButton = document.getElementById("searchButton");
-searchButton.onclick = searchFunction;
+
 
 function copyEmojiAndShowToast(clickedElement) {
   const emojiText = clickedElement.textContent;
