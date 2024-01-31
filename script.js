@@ -11,6 +11,8 @@ fetch("emoji.json")
 
             <p class="emoji"> ${emojiData.emoji}</p>
             <p class="emojiDescription"> ${emojiData.aliases}</p>
+            <p class="emojiTags">${emojiData.tags}</p>
+        
         </div>
         
         `;
@@ -21,22 +23,26 @@ fetch("emoji.json")
 
 function searchFunction() {
   const searchInput = document.getElementById("searchInput");
-  const searchValue = searchInput.value.toLowerCase();
+  const searchValue = searchInput.value.trim().toLowerCase();
   const emojiItems = document.querySelectorAll(".emoji-item");
 
   emojiItems.forEach((item) => {
     const emojiDescription = item
       .querySelector(".emojiDescription")
       .textContent.toLowerCase();
-    if (emojiDescription.includes(searchValue)) {
-      item.style.display = "block";
-    } else {
-      item.style.display = "none";
-    }
+    const emojiTags = item
+      .querySelector(".emojiTags")
+      .textContent.toLowerCase();
+
+    const shouldDisplay =
+      emojiDescription.includes(searchValue) || emojiTags.includes(searchValue);
+    item.style.display = shouldDisplay || searchValue === "" ? "block" : "none";
   });
 }
+
 const searchButton = document.getElementById("searchButton");
 searchButton.onclick = searchFunction;
+
 
 document.addEventListener("DOMContentLoaded", function () {
   function startVoiceRecognition() {
@@ -140,3 +146,4 @@ function showToast(message) {
     toast.remove();
   }, 5000);
 }
+

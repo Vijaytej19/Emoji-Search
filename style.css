@@ -1,80 +1,78 @@
-*{
+* {
   margin: 0;
   padding: 0;
-  
 }
-.titleContainer{
+.titleContainer {
   display: flex;
   justify-content: center;
-  margin-top: 50px;  
+  margin-top: 50px;
 }
-.searchbar{
+.searchbar {
   height: 40px;
   width: 468px;
 }
-.searchbar::placeholder{
+.searchbar::placeholder {
   font-size: 16px;
   padding-left: 10px;
 }
-#searchButton{
+#searchButton {
   width: 42px;
   height: 43px;
 }
 
-#voiceButton{
+#voiceButton {
   width: 42px;
   height: 43px;
+}
+#emojiContainer {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(100px, 1fr));
+  gap: 10px;
+  margin-top: 43px;
+  margin-left: 43px;
+  /* align-items: center; */
+}
 
-}
- #emojiContainer{
-      display: grid;
-      grid-template-columns: repeat(7, minmax(100px, 1fr));
-      gap: 10px;
-      margin-top: 43px;
-      margin-left: 43px;
-      /* align-items: center; */
-}
- .singleEmojiContainer{
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
+ .commonClass{
   height: 75px;
-  width: 150px;
-  align-items: center;
+  width: 75px;
+  text-align: center;
   border: 1px solid black;
+  cursor: pointer;
+  margin: 10px;
 }
-.emoji{
+.emoji {
   font-size: 30px;
 }
-@media screen and (min-width: 0px){
-  #emojiContainer{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    margin-left: auto;
-  } 
+.emojiTags {
+  display: none;
 }
-@media screen and (min-width: 768px){
+
+@media screen and (min-width: 0px){
   #emojiContainer{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     margin-left: auto;
   } 
 }
-@media screen and (min-width: 1024px){
+@media screen and (min-width: 768px){
   #emojiContainer{
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(5, 1fr);
+    margin-left: auto;
   } 
 }
-@media screen and (min-width: 1440px){
+@media screen and (min-width: 1024px){
   #emojiContainer{
     display: grid;
     grid-template-columns: repeat(7, 1fr);
   } 
 }
-.emoji-item {
-  cursor: pointer;
-  margin: 10px;
+@media screen and (min-width: 1440px){
+  #emojiContainer{
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+  } 
 }
 .toast {
   position: fixed;
@@ -94,3 +92,4 @@
 
 
  
+
