@@ -105,9 +105,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 2000);
   }
 });
-=======
 
-}
 const searchButton = document.getElementById("searchButton");
 searchButton.onclick = searchFunction;
 
