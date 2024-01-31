@@ -34,9 +34,22 @@ function searchFunction() {
       item.style.display = "none";
     }
   });
+
 }
 const searchButton = document.getElementById("searchButton");
 searchButton.onclick = searchFunction;
+
+function copyEmojiAndShowToast(clickedElement) {
+  const emojiText = clickedElement.textContent;
+  navigator.clipboard
+    .writeText(emojiText)
+    .then(() => {
+      showToast(`Emoji "${emojiText}" is copied`);
+    })
+    .catch((err) => {
+      console.error("Unable to copy to clipboard:", err);
+    });
+}
 
 const emojiContainer = document.getElementById("emojiContainer");
 emojiContainer.addEventListener("click", (event) => {
