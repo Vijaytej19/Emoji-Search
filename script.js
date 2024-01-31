@@ -1,13 +1,12 @@
+fetch("emoji.json")
+  .then((response) => response.json())
+  .then((data) => {
+    const emojiContainer = document.getElementById("emojiContainer");
 
-fetch('emoji.json')
-    .then(response => response.json())
-    .then(data => {
-            const emojiContainer = document.getElementById('emojiContainer');
-
-    data.forEach(emojiData => {
-        const emojiDiv = document.createElement('div');
-        emojiDiv.classList.add('commonClass', 'emoji-item');
-        emojiDiv.innerHTML = `
+    data.forEach((emojiData) => {
+      const emojiDiv = document.createElement("div");
+      emojiDiv.classList.add("commonClass", "emoji-item");
+      emojiDiv.innerHTML = `
 
         <div class = "singleEmojiContainer">
             <p class="emoji"> ${emojiData.emoji}</p>
@@ -21,23 +20,23 @@ fetch('emoji.json')
   .catch((error) => console.log("Error fetching data:", error));
 
 function searchFunction() {
-    const searchInput = document.getElementById('searchInput');
-    const searchValue = searchInput.value.toLowerCase();
-    const emojiItems = document.querySelectorAll('.emoji-item');
+  const searchInput = document.getElementById("searchInput");
+  const searchValue = searchInput.value.toLowerCase();
+  const emojiItems = document.querySelectorAll(".emoji-item");
 
-    emojiItems.forEach(item => {
-        const emojiDescription = item.querySelector('.emojiDescription').textContent.toLowerCase();
-        if (emojiDescription.includes(searchValue)) {
-            item.style.display = 'block';
-        } else {
-            item.style.display = 'none';
-        }
-
-    });
+  emojiItems.forEach((item) => {
+    const emojiDescription = item
+      .querySelector(".emojiDescription")
+      .textContent.toLowerCase();
+    if (emojiDescription.includes(searchValue)) {
+      item.style.display = "block";
+    } else {
+      item.style.display = "none";
+    }
+  });
 }
-const searchButton = document.getElementById('searchButton');
-searchButton.onclick = searchFunction
-
+const searchButton = document.getElementById("searchButton");
+searchButton.onclick = searchFunction;
 
 const emojiContainer = document.getElementById("emojiContainer");
 emojiContainer.addEventListener("click", (event) => {
@@ -58,7 +57,3 @@ function showToast(message) {
     toast.remove();
   }, 5000);
 }
-
-
-
-
