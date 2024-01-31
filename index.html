@@ -11,6 +11,7 @@
     />
     <script src="script.js" defer></script>
   </head>
+
   <body>
     <p id="notFound"></p>
     <div class="titleContainer">
@@ -21,11 +22,16 @@
         class="searchbar"
       />
       <button id="searchButton"><i class="material-icons">search</i></button>
-      <button id="voiceButton"><i class="material-icons">mic</i></button>
+
+      <button id="voiceButton" onclick="startVoiceRecognition">
+        <i class="material-icons">mic</i>
+      </button>
+
     </div>
     <div class="mainContainer">
       <div id="emojiContainer"></div>
     </div>
+
     <div id="toastContainer"></div>
   </body>
 </html>
