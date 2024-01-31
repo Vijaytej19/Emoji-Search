@@ -1,40 +1,38 @@
-*{
+* {
   margin: 0;
   padding: 0;
-  
 }
-.titleContainer{
+.titleContainer {
   display: flex;
   justify-content: center;
-  margin-top: 50px;  
+  margin-top: 50px;
 }
-.searchbar{
+.searchbar {
   height: 40px;
   width: 468px;
 }
-.searchbar::placeholder{
+.searchbar::placeholder {
   font-size: 16px;
   padding-left: 10px;
 }
-#searchButton{
+#searchButton {
   width: 42px;
   height: 43px;
 }
 
-#voiceButton{
+#voiceButton {
   width: 42px;
   height: 43px;
-
 }
- #emojiContainer{
-      display: grid;
-      grid-template-columns: repeat(7, minmax(100px, 1fr));
-      gap: 10px;
-      margin-top: 43px;
-      margin-left: 43px;
-      /* align-items: center; */
+#emojiContainer {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(100px, 1fr));
+  gap: 10px;
+  margin-top: 43px;
+  margin-left: 43px;
+  /* align-items: center; */
 }
- .sinleEmojiContainer{
+.sinleEmojiContainer {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -43,13 +41,9 @@
   align-items: center;
   border: 1px solid black;
 }
-.emoji{
+.emoji {
   font-size: 30px;
- 
 }
-
-
-
-
-
- 
+.emojiTags {
+  display: none;
+}
