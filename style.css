@@ -46,6 +46,9 @@
 .emojiTags {
   display: none;
 }
+.emojiDescription{
+  line-break: anywhere;
+}
 
 @media screen and (min-width: 0px){
   #emojiContainer{
