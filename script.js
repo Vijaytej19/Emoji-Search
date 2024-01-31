@@ -34,6 +34,7 @@ function searchFunction() {
       item.style.display = "none";
     }
   });
+
 }
 const searchButton = document.getElementById("searchButton");
 searchButton.onclick = searchFunction;
@@ -49,6 +50,7 @@ function copyEmojiAndShowToast(clickedElement) {
       console.error("Unable to copy to clipboard:", err);
     });
 }
+
 const emojiContainer = document.getElementById("emojiContainer");
 emojiContainer.addEventListener("click", (event) => {
   const clickedElement = event.target;
