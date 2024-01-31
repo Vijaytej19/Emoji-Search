@@ -1,3 +1,4 @@
+
 fetch('emoji.json')
     .then(response => response.json())
     .then(data => {
@@ -7,16 +8,17 @@ fetch('emoji.json')
         const emojiDiv = document.createElement('div');
         emojiDiv.classList.add('commonClass', 'emoji-item');
         emojiDiv.innerHTML = `
+
         <div class = "singleEmojiContainer">
             <p class="emoji"> ${emojiData.emoji}</p>
             <p class="emojiDescription"> ${emojiData.aliases}</p>
         </div>
         
         `;
-        emojiContainer.appendChild(emojiDiv);   
+      emojiContainer.appendChild(emojiDiv);
     });
-})
-.catch(error => console.log('Error fetching data:', error));
+  })
+  .catch((error) => console.log("Error fetching data:", error));
 
 function searchFunction() {
     const searchInput = document.getElementById('searchInput');
@@ -30,10 +32,32 @@ function searchFunction() {
         } else {
             item.style.display = 'none';
         }
+
     });
 }
 const searchButton = document.getElementById('searchButton');
 searchButton.onclick = searchFunction
+
+
+const emojiContainer = document.getElementById("emojiContainer");
+emojiContainer.addEventListener("click", (event) => {
+  const clickedElement = event.target;
+  if (clickedElement.classList.contains("emoji")) {
+    copyEmojiAndShowToast(clickedElement);
+  }
+});
+
+function showToast(message) {
+  const toastContainer = document.getElementById("toastContainer");
+  const toast = document.createElement("div");
+  toast.classList.add("toast");
+  toast.textContent = message;
+  toastContainer.appendChild(toast);
+
+  setTimeout(() => {
+    toast.remove();
+  }, 5000);
+}
 
 
 
