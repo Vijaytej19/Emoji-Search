@@ -1,7 +1,6 @@
 fetch("emoji.json")
   .then((response) => response.json())
   .then((data) => {
-    // Process the data and display in UI
     const emojiContainer = document.getElementById("emojiContainer");
 
     data.forEach((emojiData) => {
@@ -9,6 +8,7 @@ fetch("emoji.json")
       emojiDiv.classList.add("commonClass", "emoji-item");
       emojiDiv.innerHTML = `
         <div class = "sinleEmojiContainer">
+
             <p class="emoji"> ${emojiData.emoji}</p>
             <p class="emojiDescription"> ${emojiData.aliases}</p>
         </div>
@@ -105,3 +105,40 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 2000);
   }
 });
+=======
+
+}
+const searchButton = document.getElementById("searchButton");
+searchButton.onclick = searchFunction;
+
+function copyEmojiAndShowToast(clickedElement) {
+  const emojiText = clickedElement.textContent;
+  navigator.clipboard
+    .writeText(emojiText)
+    .then(() => {
+      showToast(`Emoji "${emojiText}" is copied`);
+    })
+    .catch((err) => {
+      console.error("Unable to copy to clipboard:", err);
+    });
+}
+
+const emojiContainer = document.getElementById("emojiContainer");
+emojiContainer.addEventListener("click", (event) => {
+  const clickedElement = event.target;
+  if (clickedElement.classList.contains("emoji")) {
+    copyEmojiAndShowToast(clickedElement);
+  }
+});
+
+function showToast(message) {
+  const toastContainer = document.getElementById("toastContainer");
+  const toast = document.createElement("div");
+  toast.classList.add("toast");
+  toast.textContent = message;
+  toastContainer.appendChild(toast);
+
+  setTimeout(() => {
+    toast.remove();
+  }, 5000);
+}
